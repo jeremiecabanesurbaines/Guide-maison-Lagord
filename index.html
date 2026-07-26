@@ -30,7 +30,7 @@
             color: var(--text);
             line-height: 1.6;
             padding: 20px 15px;
-            overflow-x: hidden; /* Empêche tout défilement horizontal parasite */
+            overflow-x: hidden;
         }
 
         .container {
@@ -127,7 +127,7 @@
             margin-bottom: 30px;
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
-            overflow: hidden; /* Empêche les éléments enfants de déborder du cadre */
+            overflow: hidden;
         }
 
         h2 {
@@ -164,15 +164,20 @@
             margin: 15px 0;
             text-align: center;
             width: 100%;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .img-container img {
+            width: 100%;
             max-width: 100%;
             height: auto;
+            object-fit: contain;
             border-radius: var(--radius);
             border: 1px solid var(--border);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: inline-block;
+            display: block;
+            margin: 0 auto;
         }
 
         .rotate-right {
