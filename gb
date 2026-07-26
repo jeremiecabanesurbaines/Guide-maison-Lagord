@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Guide - Home Exchange</title>
+    <style>
+        :root {
+            --primary: #2c5e3b;
+            --primary-light: #e8f0eb;
+            --accent: #d97706;
+            --bg: #f8faf9;
+            --card-bg: #ffffff;
+            --text: #1f2937;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px 15px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), #1e4027);
+            color: white;
+            padding: 40px 20px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .nav-toc {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .nav-toc h3 {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .nav-toc ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-toc a {
+            text-decoration: none;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .nav-toc a:hover {
+            background: #d0e1d5;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            color: var(--text);
+            font-size: 1.2rem;
+            margin: 25px 0 12px 0;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .img-container {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .rotate-right {
+            transform: rotate(90deg);
+            margin: 30px 0;
+        }
+
+        .img-caption {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--bg);
+            padding: 18px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            background: var(--primary-light);
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .alert-box {
+            background: #fffbeb;
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        a.btn-link {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        a.btn-link:hover {
+            opacity: 0.9;
+        }
+
+        a.inline-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🏠 Welcome to Our Home!</h1>
+        <p>Guest guide & practical information for your stay</p>
+    </header>
+
+    <nav class="nav-toc">
+        <h3>Contents</h3>
+        <ul>
+            <li><a href="#accueil">1. Arrival & Welcome</a></li>
+            <li><a href="#maison">2. Living in the House</a></li>
+            <li><a href="#jardin">3. Garden, Chickens & Pool</a></li>
+            <li><a href="#commerces">4. Local Shops & Markets</a></li>
+            <li><a href="#tourisme">5. Activities & Sightseeing</a></li>
+        </ul>
+    </nav>
+
+    <!-- SECTION 1 -->
+    <section id="accueil">
+        <h2>1. Arrival & Welcome</h2>
+        
+        <p><strong>Address:</strong> 14 rue des Goélands, 17140 LAGORD</p>
+        
+        <div class="img-container">
+            <img src="1-Photo-maison.jpeg" alt="The House">
+            <div class="img-caption">The house at 14 rue des Goélands</div>
+        </div>
+
+        <div class="card" style="margin-top: 20px;">
+            <span class="badge">LOCAL CONTACT</span>
+            <p><strong>Marie-Paule</strong> (Alice's mother) will welcome you upon arrival.</p>
+            <p>📞 <strong>Phone:</strong> <a href="tel:+33686603179" class="inline-link">+33 6 86 60 31 79</a></p>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">* Please inform her of your arrival time a few hours in advance to arrange meet-up details.</p>
+        </div>
+
+        <h3>Parking</h3>
+        <p>You can easily park <strong>across the street</strong>, directly facing the house. Please note that parking on the sidewalks is strictly prohibited.</p>
+        
+        <div class="img-container">
+            <img src="2-Photo-maison-stationnement.jpeg" alt="Parking across the house">
+            <div class="img-caption">Recommended parking spot across the street</div>
+        </div>
+
+        <h3>Key Set</h3>
+        <div class="img-container">
+            <img src="3-Photo-cles.png" alt="House keys">
+            <div class="img-caption">Key ring reference numbers</div>
+        </div>
+        <ul>
+            <li><strong>1:</strong> Front door</li>
+            <li><strong>2:</strong> Garage door <em>(Top and middle locks; we do not use the bottom lock)</em></li>
+            <li><strong>3:</strong> Bike padlocks (Yuba & VSF Fahrrad)</li>
+            <li><strong>4:</strong> Yuba bike battery lock</li>
+            <li><strong>5:</strong> Garage side door (patio access)</li>
+            <li><strong>6:</strong> Pool cover key</li>
+        </ul>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section id="maison">
+        <h2>2. Living in the House</h2>
+
+        <h3>Bedrooms & Linens</h3>
+        <p>Beds have been made in the ground-floor bedroom as well as in the kids' upstairs bedrooms.</p>
+        <p>If needed, you can find <strong>spare bed sheets</strong> in the hallway wardrobe upstairs.</p>
+
+        <h3>Waste Management</h3>
+        <p>The wheelie bins are located in front of the garage door. For collection, please place them on the sidewalk the evening before:</p>
+        <ul>
+            <li>🔵 <strong>Blue Bin (general waste):</strong> Collection on Wednesday morning <em>(put out on Tuesday evening)</em></li>
+            <li>🟡 <strong>Yellow Bin (recyclables):</strong> Collection on Friday morning <em>(put out on Thursday evening)</em></li>
+        </ul>
+
+        <div class="img-container">
+            <img src="4-Photo-dechets.jpg" alt="Trash bins">
+            <div class="img-caption">Bin placement in front of the garage</div>
+        </div>
+
+        <p>🍾 <strong>Glass recycling:</strong> The nearest glass collection point is located on Rue Edwige Feuillère in Lagord.<br>
+        <a href="https://maps.app.goo.gl/HknuA4N3G76ojhBV6" target="_blank" class="btn-link">📍 View on Google Maps</a></p>
+        
+        <p>🥬 <strong>Food scraps & bio-waste:</strong> Our chickens will gladly eat your fruit and vegetable peels!</p>
+
+        <h3>Wi-Fi Connection</h3>
+        <div class="card">
+            <p><strong>Network:</strong> <code>Livebox-ADDO</code></p>
+            <p><strong>Password:</strong> <code>250280JG-</code></p>
+            <div class="img-container">
+                <img src="5-My_WiFi_QR_Code.jpg" alt="WiFi QR Code" style="max-width: 200px;">
+                <div class="img-caption">Scan to connect automatically</div>
+            </div>
+        </div>
+
+        <h3>Electricity</h3>
+        <p>In case of a tripped circuit, the main electrical panel is located in the garage.</p>
+        <div class="grid-2">
+            <div class="img-container">
+                <img src="6-compteur-elec.jpg" alt="Electrical panel 1">
+            </div>
+            <div class="img-container">
+                <img src="7-compteur-elec.jpg" alt="Electrical panel 2">
+            </div>
+        </div>
+
+        <h3>Kitchen Appliances</h3>
+        <p><strong>Oven:</strong> The control knob is extremely sensitive. A light touch can inadvertently turn the oven on, so please be careful when walking past.</p>
+        <div class="img-container">
+            <img src="8-four.jpg" alt="Oven controls" style="max-width: 350px;">
+        </div>
+
+        <p><strong>Bean-to-cup Coffee Machine:</strong> Coffee beans are stored in the cupboard inside the kitchen island.</p>
+        <ul>
+            <li>💡 <em>Indicator 1:</em> Empty the coffee grounds container located on the left side.</li>
+            <li>💧 <em>Indicator 2:</em> Fill the water reservoir at the back.</li>
+            <li>☕ To brew a cup, simply press one of the top two buttons on the right.</li>
+        </ul>
+        <div class="img-container">
+            <img src="10-cafetiere0.png" alt="Coffee machine" style="max-width: 350px;">
+        </div>
+
+        <div class="alert-box">
+            <strong>⚠️ Office / Sewing Room:</strong> Please keep the roller shutters mostly closed in this room to protect the sewing machines from direct sunlight. Please do not use the sewing equipment.
+        </div>
+
+        <h3>Houseplants</h3>
+        <p>We have a few plants in the living room and a grapevine on the balcony. Giving them a light watering every now and then would be greatly appreciated!</p>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section id="jardin">
+        <h2>3. Garden, Chickens & Pool</h2>
+
+        <h3>🐔 Our 4 Chickens: How-To</h3>
+        <p>They lay fresh eggs regularly! Feel free to visit them every day to collect your fresh breakfast eggs.</p>
+        
+        <ul>
+            <li><strong>Feeding:</strong> One daily portion of seeds (stored in the blue container on the patio). Fill half of the red flowerpot.</li>
+        </ul>
+        <div class="img-container">
+            <img src="9-nourriture-poules.jpeg" alt="Chicken feed" class="rotate-right" style="max-width: 400px;">
+        </div>
+
+        <ul>
+            <li><strong>Waterer:</strong> Please check the water level regularly. To refill:
+                <ol>
+                    <li>Close the white plug at the bottom.</li>
+                    <li>Fill the top reservoir with <strong>tap water</strong> (use the watering can located beneath the rainwater tank).</li>
+                    <li>Close the top cover and reopen the bottom white plug.</li>
+                </ol>
+            </li>
+        </ul>
+        <div class="img-container">
+            <img src="11-abreuvoir-poule.png" alt="Chicken waterer" style="max-width: 400px;">
+        </div>
+
+        <div class="card">
+            <p>💚 <strong>Food Scraps:</strong> Our hens are fantastic "living composters"!</p>
+            <p>❌ <strong>Strictly avoid:</strong> Citrus fruits, raw potato peels, bones, and fishbones.</p>
+        </div>
+
+        <h3>🏊‍♀️ Swimming Pool</h3>
+        <div class="img-container">
+            <img src="12-piscine.png" alt="Swimming pool">
+        </div>
+
+        <ul>
+            <li><strong>Before Swimming:</strong> Please rinse off under the shower before entering the pool, especially after going to the beach, to prevent sand from clogging the filtration system.</li>
+            <li><strong>Safety Cover:</strong> We close it every evening and during extremely hot weather.
+                <br>⚠️ <em>Mandatory:</em> Remember to <strong>remove the 5 attachment rings</strong> before opening the cover.
+                <br><em>Operation:</em> Turn the key on the right support pillar. A single pulse opens it.
+                <br>To close, hold the key until the cover is completely shut.</li>
+            <li><strong>Filtration:</strong> Automatic salt chlorination system located in the garage. No manual adjustment needed.</li>
+            <li><strong>Pool Vacuum Robot:</strong> We run it daily.
+                <ol>
+                    <li>Remove all toys from the water.</li>
+                    <li>Attach the debris collection bag.</li>
+                    <li>Plug it in and submerge it in the pool (the cycle lasts ~2 hours; avoid swimming while running).</li>
+                    <li>⚠️ To pull it out, <strong>use the blue handles</strong> and never pull on the power cable.</li>
+                </ol>
+            </li>
+        </ul>
+        <div class="img-container">
+            <img src="13-piscine.png" alt="Pool vacuum robot" style="max-width: 400px;">
+        </div>
+
+        <h3>Plancha & Outdoor Kitchen</h3>
+        <div class="img-container">
+            <img src="14-plancha.png" alt="Plancha grill">
+        </div>
+        <p>A gas plancha grill and cooking hobs are available on the terrace.</p>
+        <p>📌 <em>Note:</em> The plancha is secured to the patio structure (following local neighborhood thefts), please do not attempt to move it.</p>
+        <p>You will find the plancha utensils in the small wooden box located in the laundry room.</p>
+        <p>🔥 <strong>Gas Bottles:</strong> Please turn off the gas bottles after each use. When opening them, purge the line by pressing the button on the pressure regulator.</p>
+        <div class="img-container">
+            <img src="15-bouteille-gaz.jpg" alt="Gas pressure regulator" style="max-width: 350px;">
+        </div>
+
+        <h3>Deep Fryer</h3>
+        <p>Feel free to use it. Replacement oil is stored in a canister next to the lower refrigerator.</p>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section id="commerces">
+        <h2>4. Lagord & Surrounding Area</h2>
+
+        <h3>Nearby Shops (2-min walk)</h3>
+        <p><a href="https://maps.app.goo.gl/3ijoRn1nMRczyK4cA" target="_blank" class="btn-link">📍 Neighborhood Shopping Center</a></p>
+        <ul>
+            <li>Pharmacy, Newsagent, Bakery <em>(closed on Mondays)</em></li>
+            <li><strong>Carrefour City:</strong> Very convenient supermarket, open 7 days a week from 7:00 AM to 9:00 PM <em>(Sundays 8:00 AM – 1:00 PM)</em></li>
+        </ul>
+
+        <h3>Supermarkets (5-min drive)</h3>
+        <p><a href="https://maps.app.goo.gl/NNsYg7y5o4hFWqtS7" target="_blank" class="btn-link">📍 Fief Rose Commercial Area</a></p>
+        <p>E.Leclerc hypermarket, gas station, and organic grocery shop <em>Bio C' Bon</em>.</p>
+
+        <h3>Local Markets</h3>
+        <ul>
+            <li><strong>Lagord:</strong> Friday morning (in front of the neighborhood shopping center)</li>
+            <li><strong>La Pallice:</strong> Sunday morning (large popular market with food, clothes, etc.)</li>
+            <li><strong>La Rochelle:</strong> Wednesday & Saturday morning (+ covered food market open daily)</li>
+        </ul>
+
+        <h3>Nearby Restaurants & Outdoor Spots</h3>
+        <div class="grid-2">
+            <div class="card">
+                <h4>L'Éphémère de Pampin</h4>
+                <p>Open-air seafront guinguette in L'Houmeau. Tue–Sun 4:00 PM – 10:00 PM.</p>
+                <a href="https://maps.app.goo.gl/pZ7uE5RshGzJ3K4P8-" target="_blank" class="btn-link">📍 Open in Maps</a>
+            </div>
+            <div class="card">
+                <h4>La Cabane de Lauzière</h4>
+                <p>Fresh seafood tasting in a charming oyster farm environment.</p>
+                <a href="https://maps.app.goo.gl/ZgHMP31cf6vNuCgw9" target="_blank" class="btn-link">📍 Open in Maps</a>
+            </div>
+            <div class="card">
+                <h4>Tonton Louis</h4>
+                <p>Seafood specialist located at the authentic, non-touristy fishing port.</p>
+                <a href="https://maps.app.goo.gl/dS4pFqbbcwx4ZjVj9" target="_blank" class="btn-link">📍 Open in Maps</a>
+            </div>
+            <div class="card">
+                <h4>La Cabane Maud Chollet</h4>
+                <p>Oyster and mussel grower in Les Boucholeurs village (near Châtelaillon).</p>
+                <a href="https://maps.app.goo.gl/NZkte77GkQWSMKAv6" target="_blank" class="btn-link">📍 Open in Maps</a>
+            </div>
+        </div>
+
+        <p style="margin-top: 15px;">🍷 <strong>In La Rochelle Old Port:</strong> <a href="https://maps.app.goo.gl/AhUZbTdptn1UStA97" target="_blank" class="inline-link">Le Bar du France 1</a> (Tapas on the deck of a historic museum ship; booking recommended in August).</p>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section id="tourisme">
+        <h2>5. Sightseeing & Day Trips</h2>
+
+        <h3>🏖️ Beaches</h3>
+        <ul>
+            <li><strong>Anse de Pampin (L'Houmeau):</strong> 10 min by car / 20 min by bike. Pebble beach <em>(bring water shoes!)</em>.</li>
+            <li><strong>Châtelaillon-Plage:</strong> 17 min by car. Long sandy beach with a lively promenade.</li>
+            <li><strong>Île de Ré:</strong> Bridge is 5 min away. Summer toll: €18/car. €1 bus shuttles available from Le Belvédère parking lot (<a href="http://ebook.charente-maritime.fr/eBook/livret-respire/index.html" target="_blank" class="inline-link">Respire Bus Timetable</a>).
+                <ul>
+                    <li><em>Rivedoux:</em> Right after crossing the bridge.</li>
+                    <li><em>Le Bois-Plage (Gros Jonc):</em> 24 min away, wide sandy beach with surf waves.</li>
+                    <li><em>Trousse-Chemise:</em> <a href="https://maps.app.goo.gl/BNnsTyUyLLxe9MeQ6" target="_blank" class="inline-link">Our absolute favorite beach!</a> At the far end of the island (54 min), quieter and wilder.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>🎯 Activities in La Rochelle & Surroundings</h3>
+        <ul>
+            <li><strong>La Rochelle Aquarium:</strong> 12 min drive / 15 min bike ride. Open 8:30 AM – 11:00 PM. Online booking recommended. Best visited in the evening.</li>
+            <li><strong>Les Cabanes Urbaines:</strong> Indoor bouldering gym, eco-hub, bar, and restaurant in Les Minimes.</li>
+            <li><strong>Maritime Museum:</strong> Self-guided tour aboard historic ships.</li>
+            <li><strong>Inter-Îles Cruises:</strong> Boat tours to Fort Boyard or Île d'Aix departing from the Old Port.</li>
+            <li><strong>VERTIGO Parc (La Jarne):</strong> Tree-top adventure park with shaded picnic area.</li>
+        </ul>
+
+        <h3>🌿 Day Trips Further Afield</h3>
+        <ul>
+            <li><strong>Marais Poitevin ("Green Venice"):</strong> 40 min away. Traditional boat rides in <a href="https://www.marais-arcais.com/" target="_blank" class="inline-link">Arçais</a> or paddle/canoe rentals at <a href="https://reperedescopains.wixsite.com/le-rep" target="_blank" class="inline-link">Repère des Copains</a> in Magné.</li>
+            <li><strong>Rochefort:</strong> Visit the historic Corderie Royale naval ropeworks (40 min).</li>
+            <li><strong>Futuroscope (Poitiers):</strong> High-tech multimedia theme park (1h30).</li>
+            <li><strong>Île d'Oléron:</strong> Colorful fishing villages and wild beaches (1h10).</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Have a wonderful stay at our home! ☀️</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
