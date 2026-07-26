@@ -41,10 +41,31 @@
             text-align: center;
             background: linear-gradient(135deg, var(--primary), #1e4027);
             color: white;
-            padding: 40px 20px;
+            padding: 40px 20px 30px 20px;
             border-radius: var(--radius);
             margin-bottom: 30px;
             box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .lang-switch a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .lang-switch a:hover {
+            text-decoration: underline;
         }
 
         header h1 {
@@ -228,6 +249,9 @@
 <div class="container">
 
     <header>
+        <div class="lang-switch">
+            <a href="gb">🇬🇧 English version</a>
+        </div>
         <h1>🏠 Bienvenue chez nous !</h1>
         <p>Guide d'accueil & informations pratiques pour votre séjour</p>
     </header>
